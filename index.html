@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="travelling salesman genetic algorithm">
+    <title>TSP Genetic Algorithm</title>
+    <!-- Include css files. -->
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/fa.min.css">
+</head>
+
+<body>
+    <div class="container w-full mx-auto max-w-8/12 md:px-4 pb-8">
+        <!-- Header. -->
+        <center>
+            <h1 class="font-bold display-1 underline">
+                Travelling Salesman Problem
+            </h1>
+            <h4 class="text-subtitle mb-6">The travelling salesman problem (also called the travelling salesperson
+                problem or TSP) asks the
+                following question: "Given a list of cities and the distances between each pair of cities, what is
+                the shortest possible route that visits each city and returns to the origin city?" It is an NP-hard
+                problem in combinatorial optimization, important in theoretical computer science and operations
+                research.</h4>
+        </center>
+        <!-- Config. -->
+        <div class="card p-2 px-4 mx-auto max-w-xl">
+            <!-- Population size configuration. -->
+            <h4>Population Size</h4>
+            <select class="w-full border-2 border-gray p-2 mb-3 capitalize focus:outline-none focus:border-primary"
+                id="maxpop_id" oninput="javascript: newMaxPop = parseInt(this.value); start();">
+                <option selected value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+                <option value="400">400</option>
+                <option value="600">600</option>
+                <option value="800">800</option>
+                <option value="1000">1000</option>
+            </select>
+            <!-- Mutation rate. -->
+            <h4>Mutation Rate</h4>
+            <select class="w-full border-2 border-gray p-2 mb-3 capitalize focus:outline-none focus:border-primary"
+                id="mutation_rate_id" oninput="javascript: newMutationRate = parseFloat(this.value); start();">
+                <option selected value="0.01">1%</option>
+                <option value="0.05">5%</option>
+                <option value="0.1">10%</option>
+                <option value="0.3">30%</option>
+                <option value="0.9">90%</option>
+            </select>
+            <!-- Maximum genrations -->
+            <h4>Maximum Generations</h4>
+            <select class="w-full border-2 border-gray p-2 mb-3 capitalize focus:outline-none focus:border-primary"
+                id="maxgen_id" oninput="javascript: maxGen = parseInt(this.value); start();">
+                <option selected value="800">800</option>
+                <option value="1000">1000</option>
+                <option value="1300">1300</option>
+                <option value="1600">1600</option>
+                <option value="2000">2000</option>
+            </select>
+            <!-- Showing results. -->
+            <div class="mb-4 hidden" id="result_box_id">
+                <!-- Result info. -->
+                <h4>Generations <font id="generations_id" class="text-primary">0</font>
+                </h4>
+                <h4>Average Fitness <font id="avgfitness_id" class="text-primary">0</font>
+                </h4>
+                <div id="est_time_id"></div>
+            </div>
+        </div>
+    </div>
+    <center>
+        <!-- Canvas with map image.  -->
+        <canvas style="background: url('assets/background.png');" class="shadow-md mt-3 mb-2 hide-on-md" height="500"
+            width="920" id="myCanvas"></canvas>
+    </center>
+    <!-- Config. -->
+    <div class="card p-2 px-4 mb-2 mx-auto max-w-xl">
+        <div class="bg-light mb-2 p-2 text-center">
+            <h4 class="text-gray mb-0">Add atleast 3 cities to start genetic algorithm.</h4>
+        </div>
+        <form onsubmit="javascript: addCity(event)">
+            <!-- Add cities -->
+            <select class="w-full border-2 border-gray p-2 mb-3 capitalize focus:outline-none focus:border-primary"
+                name="city" id="cities_select_id">
+                <option selected value="0">Jerusalem</option>
+                <option value="1">Riyadh</option>
+                <option value="2">Berlin</option>
+                <option value="3">Hong Kong</option>
+                <option value="4">Melbourne</option>
+                <option value="5">Sydney</option>
+                <option value="6">Perth</option>
+                <option value="7">Chennai</option>
+                <option value="8">Delhi</option>
+                <option value="9">Rio De Janeiro</option>
+                <option value="10">Cape Town</option>
+                <option value="11">Kolkata</option>
+                <option value="12">New York</option>
+                <option value="13">Mexico City</option>
+                <option value="14">London</option>
+                <option value="15">Paris</option>
+                <option value="16">Moscow</option>
+                <option value="17">Tokyo</option>
+                <option value="18">Madrid</option>
+            </select>
+            <button>Add To Map</button>
+        </form>
+    </div>
+    <!-- Footer. -->
+    <div class="mb-2 card text-center p-2 mx-auto max-w-xl">
+        <h4 class="text-subtitle"><a href="https://github.com/lovesaroha/Travelling-Salesman-Problem"
+                target="_blank">LoveSaroha/Travelling-Salesman-Problem</a></h4>
+        <h3 class="text-subtitle font-bold mb-0 hover:underline cursor-pointer"
+            onclick="javascript: window.location = 'https://lovesaroha.com';">Love Saroha</h3>
+        <h4 class="text-gray">lovesaroha1994@gmail.com</h4>
+    </div>
+    <!-- Include script.js file -->
+    <script type="text/javascript" src="./assets/script.js"></script>
+</body>
+
+</html>
