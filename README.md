@@ -3,4 +3,4 @@ The travelling salesman problem (also called the travelling salesperson problem 
 
 ![image](https://raw.githubusercontent.com/lovesaroha/gimages/main/19.png)
 
-[lovesaroha/p/Travelling-Salesman-Problem](https://lovesaroha.com/p/Travelling-Salesman-Problem)
+[lovesaroha/Travelling-Salesman-Problem](https://js.lovesaroha.com/Travelling-Salesman-Problem)
